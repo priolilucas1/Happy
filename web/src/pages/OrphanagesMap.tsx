@@ -58,12 +58,12 @@ function OrphanagesMap(){
               icon={mapIcon}
               key={orphanage.id}
             >
-            <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
-                {orphanage.name}
-              <Link to={`/orphanages/${orphanage.id}`}>
-                <FiArrowRight size={20} color="#FFF"/>
-              </Link>
-            </Popup>
+              <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
+                  {orphanage.name}
+                <Link to={`/orphanages/${orphanage.id}`}>
+                  <FiArrowRight size={20} color="#FFF"/>
+                </Link>
+              </Popup>
             </Marker>
           )
         })}

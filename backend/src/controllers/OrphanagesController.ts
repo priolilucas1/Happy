@@ -13,7 +13,7 @@ export default {
       relations: ['images']
     }) //Procurar todos os orfanatos
     
-    response.json(orphanageView.renderMany(orphanages))
+    return response.json(orphanageView.renderMany(orphanages))
   },
 
   async show(request: Request, response: Response){
@@ -53,7 +53,7 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends,
+      open_on_weekends: open_on_weekends === 'true',
       images
     }
 
@@ -74,6 +74,7 @@ export default {
 
     await schema.validate(data, {
       abortEarly: false,
+
     })
 
     const orphanage = orphanagesRepository.create(data)

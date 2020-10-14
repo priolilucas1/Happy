@@ -1,3 +1,4 @@
+import { point } from 'leaflet';
 import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { useHistory } from 'react-router-dom';
@@ -11,7 +12,7 @@ export default function Sidebar(){
 
   return(
     <aside className="app-sidebar">
-        <img src={mapMarkerImg} alt="Happy" />
+        <img src={mapMarkerImg} style={{cursor: "pointer"}} alt="Happy" onClick={goBack}/>
 
         <footer>
           <button type="button" onClick={goBack}>
